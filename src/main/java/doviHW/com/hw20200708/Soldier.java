@@ -1,4 +1,4 @@
-package DoviHW.com.HW20200708;
+package doviHW.com.hw20200708;
 
 public class Soldier {
     private String name;
