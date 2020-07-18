@@ -12,9 +12,26 @@ public class Person {
     private int age;
 
 
+    public int doWork(String what) {
+        return 4;
+    }
+
+
+
+
+    public void printWeight() {
+
+
+        Person person = new Person();
+
+        person.doWork("work to do");
+        System.out.println(123);
+    }
 
 
     public void setName(String name) {
+
+
         this.name = name;
     }
 
