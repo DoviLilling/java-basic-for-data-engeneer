@@ -54,10 +54,22 @@ public class Run {
         persons.print(); // size should be 3
         persons.addAll(newPersons);
         persons.print(); // size should be 5
+        StupidPersonList spl = new StupidPersonList();
+        spl.addAll(persons);
         persons.retainAll(newPersons);
         persons.print(); // size should be 2!
 
         persons.clear();
         persons.print(); // size should be 0
+
+        spl.print(); // size should be 5
+        spl.subList(1,4).print(); // size should be 3
+
+        Person person3 = new Person();
+        person3.setName("Anat1");
+        person3.setAge(20);
+        spl.subList(1,4).set(2, person3);
+        spl.subList(1,4).print(); // size should be 3, with Anat
+        spl.print(); // size should be 5, with Anat
     }
 }
