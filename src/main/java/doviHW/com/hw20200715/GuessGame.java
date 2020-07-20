@@ -5,9 +5,9 @@ import java.util.Random;
 
 public class GuessGame {
     HighScores highScores = new HighScores();
+    private Random random = new Random();
 
     public void play(int max){
-        Random random = new Random();
         int numberToGuess = random.nextInt(max);
         int guesses = 1;
         int currentGuess = Integer.parseInt(JOptionPane.showInputDialog("Guess my number (up to " + max + ")..."));
