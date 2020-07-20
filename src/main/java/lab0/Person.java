@@ -1,5 +1,7 @@
 package lab0;
 
+import java.util.Objects;
+
 /**
  * @author Evgeny Borisov
  */
@@ -29,6 +31,10 @@ public class Person {
     }
 
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
 
 
@@ -39,6 +45,20 @@ public class Person {
         System.out.println("Person");
     }
 
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(name, person.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
 
     public int getAge() {
         var x = 4.0;

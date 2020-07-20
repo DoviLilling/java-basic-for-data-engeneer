@@ -11,6 +11,13 @@ public class GuessGame {
     private int bestResult = Integer.MAX_VALUE;
 
     public void play(int max) {
+
+
+
+
+
+
+
         Random random = new Random();
         int x = random.nextInt(max);
 
