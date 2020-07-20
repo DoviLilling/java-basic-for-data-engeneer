@@ -35,8 +35,8 @@ public class StupidPersonCollection implements Collection<Person> {
         return false;
     }
 
-    private class PersonCollectionIterator implements Iterator<Person> {
-        private int iteratorCount = 0;
+    protected class PersonCollectionIterator implements Iterator<Person> {
+        protected int iteratorCount = 0;
 
         @Override
         public boolean hasNext() {
@@ -96,7 +96,7 @@ public class StupidPersonCollection implements Collection<Person> {
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        if (c != null && c.getClass() == getClass()){
+        if (c != null){
             StupidPersonCollection personsToCheck = (StupidPersonCollection) c;
             //for (Person personToCheck : personsToCheck) { - this does not work for some reason, apparently uses the local iterator instead of the parameter's
             for (Iterator<Person> iterator = personsToCheck.iterator(); iterator.hasNext(); ) {
@@ -105,8 +105,9 @@ public class StupidPersonCollection implements Collection<Person> {
                     return false;
                 }
             }
+            return true;
         }
-        return true;
+        return false;
     }
 
     @Override
