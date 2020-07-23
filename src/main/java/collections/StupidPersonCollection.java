@@ -4,11 +4,12 @@ import lab0.Person;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Set;
 
 /**
  * @author Evgeny Borisov
  */
-public class StupidPersonCollection implements Collection<Person> {
+public class StupidPersonCollection implements Set<Person> {
 
     private Person[] persons = new Person[3];
 
@@ -22,6 +23,8 @@ public class StupidPersonCollection implements Collection<Person> {
         }
 
     }
+
+
 
     @Override
     public int size() {
@@ -60,6 +63,7 @@ public class StupidPersonCollection implements Collection<Person> {
 
     @Override
     public boolean add(Person person) {
+
         Person[] newPersons = new Person[persons.length + 1];
 
         System.arraycopy(persons, 0, newPersons, 0, 3);
