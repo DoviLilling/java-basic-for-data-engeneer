@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * @author Evgeny Borisov
  */
-public class Person {
+public class Person  {
 
 
 
