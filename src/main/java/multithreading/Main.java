@@ -13,16 +13,19 @@ public class Main {
 
         Thread t1 = new Thread(onePrinter, "one printer thread");
         Thread t2 = new Thread(twoPrinter, "two printer thread");
-        t2.setDaemon(true);
 
-        Thread.sleep(5000);
+
         t1.start();
 
+        t2.setDaemon(true);
         t2.start();
 
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         onePrinter.setMoreWorkToDo(false);
-        System.out.println("the end");
+        Thread.sleep(1);
+        System.out.println(TwoPrinter.x);
+        System.out.println("the end of app");
+
 
 
     }
