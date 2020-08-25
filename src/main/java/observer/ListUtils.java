@@ -6,9 +6,26 @@ import java.util.List;
  * @author Evgeny Borisov
  */
 public class ListUtils {
-    public static <T>  int countDuplicates(List<T> list,T t) {  //todo add additional parameter which will be an object which will have function like boolean equals(T t1, T t2)
+    public static <T>  int countDuplicates(List<T> list,T t) {
+        int counter = 0;
+
+        for (T t1 : list) {
+            if (t1.equals(t)) {
+                counter++;
+            }
+        }
+        return counter;
+    }
 
 
-        return 0;
+    public static <T>  int countDuplicates(List<T> list,T t,Equalator<T> equalator) {
+        int counter = 0;
+
+        for (T t1 : list) {
+            if (equalator.equals(t1,t)) {
+                counter++;
+            }
+        }
+        return counter;
     }
 }
