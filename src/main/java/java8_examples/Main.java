@@ -1,30 +1,30 @@
 package java8_examples;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.function.Consumer;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.stream.Stream;
 
 /**
  * @author Evgeny Borisov
  */
 public class Main {
     public static void main(String[] args) {
-        List<String> list = List.of("java", "scala", "python");
+
+        String s = "3aabacbebebe";
+        String str = s.substring(1, s.length());
+        int length = Character.getNumericValue(s.charAt(0));
+        System.out.println("length = " + length);
+        System.out.println(str);
+
+        char[] chars = str.toCharArray();
 
 
-        list.forEach(System.out::println);
 
-        for (String s : list) {
-            System.out.println(s);
+        HashSet<Character> characters = new HashSet<>();
+        for (char aChar : chars) {
+            characters.add(aChar);
         }
 
-        list.forEach(new Consumer<String>() {
-            @Override
-            public void accept(String s) {
-                System.out.println(s);
-            }
-        });
-
-//        list.sort();
+        System.out.println(characters);
     }
 }

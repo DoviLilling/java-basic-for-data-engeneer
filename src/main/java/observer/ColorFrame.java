@@ -9,16 +9,27 @@ import java.awt.event.ActionListener;
  * @author Evgeny Borisov
  */
 public class ColorFrame extends JFrame {
-    public ColorFrame() throws HeadlessException {
+
+    private int y;
+    public ColorFrame(int[] x) throws HeadlessException {
+
 
 
         setSize(600,600);
 
 
+
+
         JButton button = new JButton("click me");
 
 
-        button.addActionListener(e -> System.out.println("Hello"));
+
+        x[0]++;
+
+        button.addActionListener(e -> System.out.println("Hello "+x[0]++));
+
+
+
 
 
 
@@ -33,6 +44,6 @@ public class ColorFrame extends JFrame {
 
 
     public static void main(String[] args) {
-        new ColorFrame();
+        new ColorFrame(new int[]{10});
     }
 }
